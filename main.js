@@ -2,7 +2,7 @@ const people = [
   {
     "name": "Angela",
     "age": "64",
-    "occupation": "Actress"
+    "occupation": "Actor"
   },
   {
     "name": "Steve",
@@ -32,7 +32,7 @@ const people = [
   {
     "name": "Megan",
     "age": "24",
-    "occupation": "Actress"
+    "occupation": "Actor"
   },
   {
     "name": "Charles",
@@ -60,3 +60,26 @@ const people = [
     "occupation": "Detective"
   },
 ]
+
+const peopleListEl = document.querySelector('ul');
+function showList(people) {
+  const friends = people.map(friend => `
+  <li>
+    <h2>${friend.name} is ${friend.age} years old</h2>
+  </li>
+`)
+  peopleListEl.innerHTML=friends.join("");
+}
+
+
+
+const listAllBtn = document.querySelector('#all');
+const olderBtn = document.querySelector('#older');
+const actorBtn = document.querySelector('#actor');
+const ageBtn = document.querySelector('#age');
+showBtn.addEventListener('click', () => {
+  const filtered = people.filter(person => person.age < 30);
+  showList(filtered);
+});
+
+
