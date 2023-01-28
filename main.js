@@ -11,7 +11,7 @@ const people = [
   },
   {
     "name": "Will",
-    "age": "50",
+    "age": "20",
     "occupation": "Comedian"
   },
   {
@@ -59,7 +59,7 @@ const people = [
     "age": "30",
     "occupation": "Detective"
   },
-]
+];
 
 // function to display items in list
 const peopleListEl = document.querySelector('ul');
@@ -71,6 +71,7 @@ function showList() {
 `)
   peopleListEl.innerHTML=friends.join("");
 }
+showList()
 
 // target button elements
 const listAllBtn = document.querySelector('#all');
@@ -78,7 +79,8 @@ const olderBtn = document.querySelector('#older');
 const actorBtn = document.querySelector('#actors');
 const ageBtn = document.querySelector('#age');
 
-// button functions
+// -------button functions------
+// show all people
 listAllBtn.addEventListener('click', () => {
   showList(people);
   console.log("List All clicked");
@@ -86,8 +88,9 @@ listAllBtn.addEventListener('click', () => {
 
 // filter to show people older than 35
 olderBtn.addEventListener('click', () => {
-
-  console.log("Over 35 clicked");
+  const older = people.filter(friend => friend.age > 35);
+  showList(older);
+  console.log("Over 35 clicked" + older);
 });
 
 // filter to show actors
