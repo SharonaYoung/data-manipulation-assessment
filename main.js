@@ -61,8 +61,9 @@ const people = [
   },
 ]
 
+// function to display items in list
 const peopleListEl = document.querySelector('ul');
-function showList(people) {
+function showList() {
   const friends = people.map(friend => `
   <li>
     <h2>${friend.name} is ${friend.age} years old</h2>
@@ -71,15 +72,32 @@ function showList(people) {
   peopleListEl.innerHTML=friends.join("");
 }
 
-
-
+// target button elements
 const listAllBtn = document.querySelector('#all');
 const olderBtn = document.querySelector('#older');
-const actorBtn = document.querySelector('#actor');
+const actorBtn = document.querySelector('#actors');
 const ageBtn = document.querySelector('#age');
-showBtn.addEventListener('click', () => {
-  const filtered = people.filter(person => person.age < 30);
-  showList(filtered);
+
+// button functions
+listAllBtn.addEventListener('click', () => {
+  showList(people);
+  console.log("List All clicked");
 });
 
+// filter to show people older than 35
+olderBtn.addEventListener('click', () => {
 
+  console.log("Over 35 clicked");
+});
+
+// filter to show actors
+actorBtn.addEventListener('click', () => {
+
+  console.log("Actors clicked");
+});
+
+// display all people with age in 5 years
+ageBtn.addEventListener('click', () => {
+
+  console.log("Age clicked");
+});
